@@ -14,5 +14,5 @@ install:
   - mvn deploy -DskipTests -Pdocker
 
 after_success:
-  - docker tag -f marketreaction/match:TRAVIS_BUILD_NUMBER marketreaction/match:latest
+  - docker tag marketreaction/match:TRAVIS_BUILD_NUMBER marketreaction/match:latest
   - docker push marketreaction/match:latest

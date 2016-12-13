@@ -69,6 +69,8 @@ public class StoryMatchListener implements MessageListener {
             final TextMessage textMessage = (TextMessage) message;
             try
             {
+                message.acknowledge();
+
                 Story story = storyRepository.findOne(textMessage.getText());
                 
                 if(story == null) {
